@@ -58,7 +58,7 @@ MongoClient.connect('mongodb://admin:admin@ds117888.mlab.com:17888/deltahacksdat
         var poster = req.body.organization;
         var expirytime = req.body.expiry;
         var timesinceposting = req.body.time;
-        
+
        if ((title == '') || (poster == '') || (expirytime == '') || (timesinceposting == '')) {
             next('Please provide an entry for all fields.');
         } else {
@@ -96,7 +96,7 @@ MongoClient.connect('mongodb://admin:admin@ds117888.mlab.com:17888/deltahacksdat
 const PORT = process.env.PORT || 5000
 
   app.listen(PORT, () => {
-    console.log( 'listening on localhost:8080');
+    console.log( 'listening on localhost: ' + PORT);
     });
 });
 
@@ -113,7 +113,7 @@ app.get('/', function(req, res) {
     //         throw err;
     //     console.log("i think i saved a new document");
     //     });
-    res.render('wow.html');        
+    res.render('wow.html');
 });
 
 var foodPosts = [
@@ -123,7 +123,7 @@ var foodPosts = [
     distance: '0.7km',
     expiry_date: '3wks',
     restriction: 'contains nuts dummy'
-  }, 
+  },
   {
     title: '20 cans',
     poster: 'No Frills',
